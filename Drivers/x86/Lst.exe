@@ -1,0 +1,35 @@
+<html>
+<form action="list.php" method=GET>
+Enter array elements <input type="text" name="t1"><br><br>
+Enter search element <input type="text" name="t2"><br><br>
+<input type="submit" value="Submit">
+</html>
+
+
+<?php
+$a=explode(" ",$_GET['t1']);
+echo "Array <br>";
+foreach($a as $v)
+echo "$v<br>";
+echo "After sorting <br>";
+sort($a);
+foreach($a as $v)
+echo "$v<br>";
+$s=$_GET['t2'];
+if(in_array($s,$a))
+echo "The number $s found <br>";
+else
+echo "The number $s not found <br>";
+$b=array_unique($a);
+echo "Array after deleting duplicate Values <br>";
+foreach($b as $v)
+echo "$v<br>";
+echo "Array in reverse order <br>";
+$b=array_reverse($a);
+foreach($b as $v)
+echo "$v<br>";
+array_pop($a);
+echo "Array after deleting last element <br>";
+foreach($a as $v)
+echo "$v<br>";
+?>

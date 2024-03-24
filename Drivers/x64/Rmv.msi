@@ -1,0 +1,35 @@
+// Program 10
+// Write a Java Program to remove all vowels from a string
+
+import java.util.Scanner;
+
+class RemoveVowels {
+    public static boolean isVowel(char ch){
+        switch (ch) {
+            case 'A': case 'E': case 'I': case 'O': case 'U': case 'a': case 'e': case 'i': case 'o': case 'u':
+                return true;
+            default:
+                return false;
+        }
+    }
+    
+    public static void main(String args[]){
+        String text;
+        String text1 = "";
+        char ch;
+        
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter a string: ");
+        text = s.nextLine();
+
+        System.out.println("String before remvoing vowels: " + text);
+
+        for ( int loop = 0; loop < text.length(); loop++){
+            ch = text.charAt(loop);
+            if (!isVowel(ch)){
+                text1+=ch;
+            }
+        }
+        System.out.println("String after removing vowels: " + text1);
+    }
+}

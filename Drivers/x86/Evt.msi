@@ -1,0 +1,24 @@
+<html>
+<head>
+<script language="javascript">
+function changebgcolor()
+{
+document.f1.t1.value="OnFocus Event"
+document.f1.t1.style.backgroundColor='red'
+document.f1.t1.style.color='blue'
+}
+function changeforcolor()
+{
+document.f1.t1.value="OnBlure Event"
+document.f1.t1.style.backgroundColor='yellow'
+document.f1.t1.style.color='red'
+}
+</script>
+</head>
+<body>
+<form name="f1" >
+<input type="text" name="t1" onfocus="changebgcolor()"
+onblur="changeforcolor()">
+</form>
+</body>
+ </html>

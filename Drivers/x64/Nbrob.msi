@@ -1,0 +1,18 @@
+// Program 13
+// Write a program to count and display total number of 
+// objects created to a class (Hint: static members).
+
+public class NumberObjects {
+    static int count = 0;
+    NumberObjects(){
+        count ++;
+    }
+
+    public static void main(String args[]){
+        NumberObjects ob1 = new NumberObjects();
+        NumberObjects ob2 = new NumberObjects();
+        NumberObjects ob3 = new NumberObjects();
+        NumberObjects ob4 = new NumberObjects();
+        System.out.println("Number of objects created: " + count);
+    }
+}

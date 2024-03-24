@@ -1,0 +1,32 @@
+// Program 8
+// Write java program to find the sum of the digits and reverse of a given number
+// using class and objects.
+
+import java.util.Scanner;
+
+class SumRev {
+    int sum = 0, rev = 0, a;
+
+    void sum(int num){
+        do {
+            a = num % 10;
+            sum = sum + a;
+            rev = rev * 10 + a;
+            num = num / 10;
+        } while (num > 0);
+
+        System.out.println("Sum of digits = " + sum);
+        System.out.println("The reverse of digits = " + rev);
+    }
+}
+
+class SumRevMain{
+    public static void main(String args[]){
+        int n;
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter the number: ");
+        n = s.nextInt();
+        SumRev obj = new SumRev();
+        obj.sum(n);
+    }
+}

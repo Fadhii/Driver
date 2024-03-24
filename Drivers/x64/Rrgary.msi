@@ -1,0 +1,49 @@
+// Program 5
+// Write a program to merge two arrays.
+
+import java.util.*;
+
+public class MergeArray {
+    public static void main(String args[])
+    {
+        int n;
+        Scanner S = new Scanner(System.in);
+        System.out.println("Enter the limit");
+        n = S.nextInt();
+
+        int a[] = new int[n];
+        int b[] = new int[n];
+        System.out.println("Enter First array elements");
+
+        for (int i = 0; i < n; i++)
+        {
+            a[i] = S.nextInt();
+        }
+        System.out.println("Enter second array elements");
+
+        for (int i = 0; i < n; i++)
+        {
+            b[i] = S.nextInt();
+        }
+
+        int a1 = a.length;
+        int b1 = b.length;
+        int c1 = a1 + b1;
+
+        int c[] = new int[c1];
+        System.out.println("Merged Array");
+
+        for (int i = 0; i < a1; i++)
+        {
+            c[i] = a[i];
+        }
+        for (int i = 0; i < b1; i++)
+        {
+            c[a1+i] = b[i];
+        }
+        for (int i = 0; i < c1; i++)
+        {
+            System.out.println(c[i]);
+        }
+    }
+}

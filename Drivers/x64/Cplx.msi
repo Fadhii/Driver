@@ -1,0 +1,41 @@
+// Program 12
+//  Using class and objects, write a java program to find the sum of two complex numbers
+// (Hint: Use object as parameter to function).
+
+import java.util.*;
+
+public class Complex{
+    double real;
+    double imag;
+
+    public Complex (double real, double imag){
+        this.real = real;
+        this.imag = imag;
+    }
+
+    public static void main(String args[]){
+        float r1, r2, img1, img2;
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter the first complex  number \n Real part: ");
+        r1 = sc.nextFloat();
+        System.out.println("Imaginary part: ");
+        img1 = sc.nextFloat();
+
+        System.out.println("Enter the second complex number \n Real part: ");
+        r2 = sc.nextFloat();
+        System.out.println("Imaginary part: ");
+        img2 = sc.nextFloat();
+
+        Complex n1 = new Complex(r1, img1), n2 = new Complex(r2, img2), temp;
+        temp = add(n1, n2);
+        System.out.println(String.format("Sum of two complex numbers = %.1f + %.1fi", temp.real, temp.imag));
+    }
+
+    public static Complex add(Complex n1, Complex n2) {
+        Complex temp = new Complex(0.0, 0.0);
+        temp.real = n1.real + n2.real;
+        temp.imag = n1.imag + n2.imag;
+        return(temp);
+    }
+}

@@ -1,0 +1,42 @@
+// Program 3
+// Read an array of 10 or more numbers and write a program to find the
+// a) Smallest element in the array
+// b) Largest element in the array
+// c) Second largest element in the array
+
+import java.util.Scanner;
+class ArrayOp
+{
+    public static void main(String args[])
+    {
+        int i, j, n, temp;
+        int arr[] = new int[10];
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter the limit");
+        n = s.nextInt();
+
+        System.out.println("Enter the elements:");
+
+        for (i = 0; i < n; i++)
+        {
+            arr[i] = s.nextInt();
+        }
+
+        for (i = 0; i < n - 1; i++)
+        {  
+            for ( j = i + 1; j < n ; j++)
+            {
+                if (arr[i] > arr[j])
+                {
+                    temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+
+        System.out.println("Smallest element is = " + arr[0]);
+        System.out.println("Largest element is = " + arr[n-1]);
+        System.out.println("Second largest element is = " + arr[n-2]);
+    }
+}

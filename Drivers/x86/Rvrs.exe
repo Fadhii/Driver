@@ -1,0 +1,24 @@
+<html>
+<body>
+<form action="reverse.php" method=post>
+Enter a String <input type="text" name="t1">
+<input type="submit" value="Reverse">
+</form>
+</body>
+</html>
+
+
+<?php
+function reverse($st)
+{
+$s=" ";
+$l=strlen($st);
+for($i=$l;$i>=0;$i--)
+{
+$s=$s.substr($st,$i,1);
+}
+return($s);
+}
+$str=$_POST['t1'];
+echo reverse($str);
+?>

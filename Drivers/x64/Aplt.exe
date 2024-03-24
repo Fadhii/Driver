@@ -1,0 +1,12 @@
+<html>
+    <head>
+        <title>Applet</title>
+    </head>
+    <body>
+        <applet code="ParaRect.class" width="1200" height="1000" alt="Not compatible">
+            <param name="x" value="100">
+            <param name="y" value="200">
+            <param name="color" value="FF0000">
+        </applet>
+    </body>
+</html>

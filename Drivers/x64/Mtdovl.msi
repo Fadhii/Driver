@@ -1,0 +1,69 @@
+// Program 14
+// Write a java program to find the volume of cube, rectangular box,
+//  cylinder using function overloading.
+
+import java.util.*;
+
+class Overload
+{
+    int volume(int x)
+    {
+        return (x*x*x);
+    }
+
+    double volume(int r, double b)
+    {
+        return (3.14159*r*r*b);
+    }
+
+    double volume(double l, double b, double h)
+    {
+        return (l*b*h);
+    }
+}
+
+class MethodOverloading 
+{
+    public static void main(String args[])
+    {
+        int opt, side, radius;
+        double length, width, height, h1;
+
+        Overload v = new Overload();
+        Scanner s = new Scanner(System.in);
+
+        System.out.println("Volume of: \n1: Cube\n2.Rectangular box\n3. Cylinder\n4. Exit");
+
+        while(true)
+        {
+            System.out.println("Enter your choice: ");
+            opt = s.nextInt();
+
+            switch (opt) {
+                case 1:
+                    System.out.println("Enter a side: ");
+                    side = s.nextInt();
+                    System.out.println("Volume of cube: " + v.volume(side));
+                    break;
+
+                case 2:
+                    System.out.println("Enter a length, width and height: ");
+                    length = s.nextDouble();
+                    width = s.nextDouble();
+                    height = s.nextDouble();
+                    System.out.println("Volume of Rectangle: " + v.volume(length, width, height));
+                    break;
+                case 3:
+                    System.out.println("Enter a Radius and height of cylinder: ");
+                    radius = s.nextInt();
+                    h1 = s.nextDouble();
+                    System.out.println("Volume of cylinder: " + v.volume(radius, h1));
+                    break;
+                case 4:
+                    System.exit(0);
+                default:
+                    break;
+            }
+        }
+    }
+}

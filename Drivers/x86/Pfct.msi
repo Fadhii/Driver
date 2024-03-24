@@ -1,0 +1,30 @@
+<html>
+<head>
+<script language=javascript>
+function numtype()
+{
+n=parseInt(document.f1.t1.value)
+i=1
+s=0
+while( i<n)
+{
+if(n % i==0)
+s=s+i
+i=i+1
+}
+if(s==n)
+alert("The Given number is Perfect")
+if(s<n)
+alert("The Given number is deficient")
+if(s>n)
+alert("The Given number is abundant")
+}
+</script>
+</head>
+<body>
+<form name=f1>
+Enter the Number <input type="text" name="t1"><br><br>
+<input type="button" value="Display" onclick="numtype()">
+</form>
+</body>
+</html>

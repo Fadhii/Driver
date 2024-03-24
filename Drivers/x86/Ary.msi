@@ -1,0 +1,24 @@
+<html>
+<head>
+<script>
+function arraysum()
+{
+var a=Array()
+var n=parseInt(document.f1.t1.value)
+var s=0
+for(i=0;i<n;i++)
+{
+a[i]=parseInt(prompt("Enter an element"))
+s=s+a[i]
+}
+alert("The sum of elements "+s)
+}
+</script>
+</head>
+<body>
+<form name="f1">
+Enter the limit <input type="text" name="t1">
+<input type="button" value= "Sum" onclick="arraysum()">
+</form>
+</body>
+</html>

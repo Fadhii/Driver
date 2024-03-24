@@ -1,0 +1,64 @@
+// Program 16
+// Create an interface volume with member variable pi and methods
+//  readdata () and dispvolume (). Create two classes sphere and cylinder
+//   to implement this interface. Write a Java program to find the volume.
+
+import java.util.*;
+
+interface Volume
+{
+    final static float pi = 3.14F;
+
+    void readData();
+    void dispVolume();
+}
+
+class Sphere implements Volume
+{
+    double r, volume;
+
+    public void readData()
+    {
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter the radius of sphere: ");
+        r = s.nextDouble();
+    }
+    public void dispVolume(){
+        volume = 1.33*pi*r*r*r;
+        System.out.println("Volume of the sphere: " + volume);
+    }
+}           
+
+class Cylinder implements Volume
+{
+    double r, volume, h;
+    public void readData()
+    {
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter the radius and heigth of the Cylinder: ");
+        r = s.nextDouble();
+        h = s.nextDouble();
+    }
+
+    public void dispVolume()
+    {
+        volume = pi*r*r*h;
+        System.out.println("Volume of the cylinder: " + volume);
+    }
+}
+
+class InterfaceTest 
+{
+    public static void main(String args[])
+    {
+        Sphere sp = new Sphere();
+        Cylinder c = new Cylinder();
+        Volume V;
+        V = sp;
+        V.readData();
+        V.dispVolume();
+        V = c;
+        V.readData();
+        V.dispVolume();
+    }   
+}

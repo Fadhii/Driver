@@ -1,0 +1,33 @@
+CREATE TABLE Student (rollno varchar(5) primary key, sname varchar(25), mark int, grade varchar(1))
+Insert into student values (‘S0001’,’Rahul’, 90,’A’);
+
+
+
+<html>
+<form action=stud.php method=GET>
+Enter your Roll Number <input type="text" name='rolno'>
+<input type="submit" value="Submit">
+</form>
+</html>
+
+
+
+<?php
+$rolno=$_GET['rolno'];
+$db=pg_connect("host=localhost port=5432 dbname=postgres user=postgres password=123456");
+$rs=pg_query($db,"select * from student where rollno='$rolno'");
+echo "Mark List <br>";
+echo "<table border=2>";
+while($row=pg_fetch_row($rs))
+{
+echo "<tr>";
+echo "<td> Roll no </td><td>".$row[0]."</td>";
+echo "<tr>";
+echo "<td> Student Name </td><td>".$row[1]."</td>";
+echo "<tr>";
+echo "<td> Mark </td><td>".$row[2]."</td>";
+echo "<tr>";
+echo "<td> Grade </td><td>".$row[3]."</td>";
+}
+echo "</table>";
+?>

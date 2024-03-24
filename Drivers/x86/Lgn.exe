@@ -1,0 +1,26 @@
+<html>
+<body>
+<form name="form1" method="post" action="login.php">
+user name <input type=text name="myusrnm"> <br> <br>
+password <input type=password name="mypasswd"> <br><br>
+<input type=submit value="Sign In">
+</form>
+</body>
+</html>
+
+
+<?php
+$unm=$_POST['myusrnm'];
+$pwd=$_POST['mypasswd'];
+$db=pg_connect("host=localhost port=5432 dbname=postgres user=postgres password=123456");
+$rs=pg_query($db,"select * from login where username='$unm' and password='$pwd'");
+$count=pg_num_rows($rs);
+if($count==1)
+{
+echo "<h1>welcome $unm </h1> ";
+}
+else
+{
+echo "Wrong username or password";
+}
+?>

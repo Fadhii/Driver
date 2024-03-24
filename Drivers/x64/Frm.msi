@@ -1,0 +1,30 @@
+import java.awt.*;
+import java.awt.event.*;
+
+public class Form {
+    public static void main(String[] args) {
+        Frame f = new Frm("Add Text to List");
+        f.setSize(500, 500);
+        f.setVisible(true);
+    }
+}
+
+class Frm extends Frame {
+    public TextField txt = new TextField(20);
+    public List lst = new List();
+    public Button b = new Button("Add Text to List");
+
+    public Frm(String title) {
+        super(title);
+        setLayout(new FlowLayout());
+        add(txt);
+        add(b);
+        add(lst);
+
+        b.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                lst.add(txt.getText());
+            }
+        });
+    }
+}

@@ -1,0 +1,66 @@
+// Program 17
+// Write a multi thread java program for displaying odd numbers
+// and even numbers up to a limit (Hint: Implement thread using
+//  Runnable interface).
+
+import java.util.*;
+
+class Thread1 implements Runnable{
+    int limit;
+    private static Boolean evenFlag = true;
+
+    Thread1(int n)
+    {
+        limit = n;
+    }
+
+    public synchronized void run()
+    {
+        if (evenFlag == true)
+        {
+            PrintEven(limit);
+        }
+        else 
+        {
+            PrintOdd(limit);
+        }
+    }
+
+    public void PrintEven(int r)
+    {
+        System.out.println("Even Numbers: \n");
+        for(int i = 2; i <= r; i+=2)
+        {
+            System.out.println(i);
+        }
+        evenFlag = false;
+    }
+
+    public void PrintOdd(int r)
+    {
+        System.out.println("Odd numbers: \n");
+
+        for(int i = 1; i <= r; i+=2)
+        {
+            System.out.println(i);
+        }
+        evenFlag = true;
+    }
+}
+
+public class OddEvenDemo
+{
+    public static void main(String args[])
+    {
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter a limit: ");
+        int a = s.nextInt();
+        Thread1 t1= new Thread1(a);
+
+        Thread td1= new Thread(t1);
+        Thread td2= new Thread(t1);
+
+        td1.start();
+        td2.start();
+    }
+}

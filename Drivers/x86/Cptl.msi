@@ -1,0 +1,20 @@
+<html>
+<head>
+<script>
+function capital()
+{
+var cap=['New delhi','Colombo','Islamabad']
+i=document.f1.country.selectedIndex
+document.f1.t1.value=cap[i]
+}
+</script>
+</head>
+<body>
+<form name="f1">
+<select name=country onclick="capital()">
+<option>India</option>
+<option>Srilanka</option>
+<option>Pakisthan</option>
+</select>
+<input type="text" name="t1">
+</form>

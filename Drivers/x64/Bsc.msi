@@ -1,0 +1,42 @@
+// Program 4
+// 4. Write a program to perform base conversion
+// a) Integer to binary
+// b) Integer to Octal
+// c) Integer to Hexadecimal
+
+import java.util.Scanner;
+
+public class BaseConverter {
+    public static void main( String args[])
+    {
+        Scanner input = new Scanner(System.in);
+        String ans;
+        System.out.println("Enter the decimal value need to convert: ");
+        int decimal_value = input.nextInt();
+        System.out.println("Select base \n Binary -b\n Octal -o\n Hexadecimal -h\n Exit -e");
+        
+        while(true)
+        {
+            System.out.println("Enter your choice: ");
+            String choice = input.next();
+
+            switch(choice)
+            {
+                case "b":
+                ans = Integer.toString(decimal_value, 2);
+                System.out.println("Binary value of " + decimal_value + " = " + ans);
+                break;
+                case "o":
+                ans = Integer.toString(decimal_value, 8);
+                System.out.println("Octal value of " + decimal_value + " = " + ans);
+                break;
+                case "h":
+                ans = Integer.toString(decimal_value, 16);
+                System.out.println("Hexadecimal value of " + decimal_value + " = " + ans);
+                break;
+                case "e":
+                System.exit(0);;
+            }
+        }
+    }
+}

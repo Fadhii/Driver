@@ -1,0 +1,22 @@
+<html>
+<body>
+<form method=POST action="fruits.php">
+<select name="fru[]" multiple=true>
+<option> Mango </option>
+<option> Orange </option>
+<option> Apple </option>
+<option> Banana </option>
+</select>
+<input type="Submit" value="Display">
+</form>
+</body>
+</html>
+
+
+<?php
+echo "Selected fruits are <br>";
+foreach($_POST['fru'] as $f)
+{
+echo "$f <br>";
+}
+?>

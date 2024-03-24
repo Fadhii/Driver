@@ -1,0 +1,46 @@
+<html>
+<head>
+<script language="javascript">
+function read()
+{
+a=parseInt(document.f1.t1.value)
+b=parseInt(document.f1.t2.value)
+}
+function add()
+{
+read()
+c=a+b
+document.f1.disp.value=c
+}
+function sub()
+{
+read()
+c=a-b
+document.f1.disp.value=c
+}
+function mul()
+{
+read()
+c=a*b
+document.f1.disp.value=c
+}
+function div()
+{
+read()
+c=a/b
+document.f1.disp.value=c
+}
+</script>
+</head>
+<body>
+<form name="f1">
+Enter First number <input type="text" name="t1"> <br><br>
+Enter Second number <input type="text" name="t2"><br><br>
+<output name="disp"></output><br><br>
+<input type="button" value="Addition" onclick="add()">
+<input type="button" value="Subtraction" onclick="sub()">
+<input type="button" value="Multiplication" onclick="mul()">
+<input type="button" value="Division" onclick="div()">
+</form>
+</body>
+</html>

@@ -1,0 +1,66 @@
+// Program 11 
+// Create a class Student to read and display the student details.
+//  Create another class mark inherit from student to read marks of
+//   5 subjects and find total and average. Write a Java program to
+//    display the result of a student.
+
+import java.util.*;
+import java.io.*;
+
+class Student {
+    int rollno;
+    String name;
+    Scanner s = new Scanner(System.in);
+
+    void readData() {
+        System.out.println("Enter roll no, name: ");
+        rollno = s.nextInt();
+        name = s.nextLine();
+    }
+
+    void display(){
+        System.out.println("\n Student Details \n Rollno: " + rollno + "\nName: " + name);
+    }
+}
+
+class Mark extends Student {
+    int total = 0;
+    double Average;
+    String[] sub = {"English","Language","Mathematics", "Data Structure",  "Networking"};
+
+    int mark[] = new int[5];
+
+    void getMarks(){
+        System.out.println("Please Enter marks: \n");
+        for ( int i = 0; i < 5; i++){
+            System.out.println(sub[i] + ": ");
+            mark[i] = s.nextInt();
+            total = total + mark[i];
+        }
+        Average = total / 5;
+    }
+
+    void displayDetails(){
+        display();
+        System.out.println("\nSubject\tMark\t");
+        System.out.println("=========\t====\t");
+
+        for ( int i = 0; i < 5; i++){
+            System.out.println(sub[i]+ "\t" + mark[i]);
+            System.out.println("\n");
+        }
+
+        System.out.println("===========\t");
+        System.out.println("Total marks = "+ total);
+        System.out.println("Average marks = " + Average);
+    }
+}
+
+class StudentDetails {
+    public static void main(String args[]){
+        Mark m = new Mark();
+        m.readData();
+        m.getMarks();
+        m.displayDetails();
+    }
+}

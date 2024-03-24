@@ -1,0 +1,20 @@
+<html>
+<head>
+<script language="javascript">
+var i=0
+function changecolor()
+{
+color=['blue','green','red','yellow']
+document.bgColor=color[i]
+i++
+if(i==4)
+i=0
+}
+</script>
+</head>
+<body>
+<form>
+<input type="button" value="Change Colour" onclick="changecolor()">
+</form>
+</body>
+</html>
